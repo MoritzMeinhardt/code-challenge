@@ -1,8 +1,3 @@
-mat-card {
-  max-width: 800px;
-  width: 100%;
-}
-
 .product-form {
   display: flex;
   flex-direction: column;

@@ -12,6 +12,7 @@ export interface AuditLogEntry {
 @Component({
   selector: 'app-audit-log',
   imports: [CommonModule, MatIconModule],
+  styleUrl: './audit-log.component.css',
   templateUrl: './audit-log.component.html',
 })
 export class AuditLogComponent {

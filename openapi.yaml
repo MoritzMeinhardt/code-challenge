@@ -84,30 +84,56 @@ components:
       properties:
         id:
           type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
           example: 1
         title:
           type: string
+          x-faker: commerce.productName
           example: "Essence Mascara Lash Princess"
         description:
           type: string
+          x-faker: commerce.productDescription
           example: "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects."
         price:
-          type: number
-          format: float
-          example: 9.99
+          type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
+          example: 9
         category:
           type: string
+          x-faker: commerce.department
           example: "beauty"
         brand:
           type: string
+          x-faker: company.name
           example: "Essence"
         stock:
           type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
           example: 5
         discountPercentage:
-          type: number
-          format: float
-          example: 7.17
+          type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
+          example: 7
       required:
         - id
         - title
@@ -117,17 +143,37 @@ components:
       properties:
         title:
           type: string
+          x-faker: commerce.productName
         description:
           type: string
+          x-faker: commerce.productDescription
         price:
-          type: number
-          format: float
+          type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
         category:
           type: string
+          x-faker: commerce.department
         brand:
           type: string
+          x-faker: company.name
         stock:
           type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
         discountPercentage:
-          type: number
-          format: float
+          type: integer
+          minimum: 0
+          maximum: 100
+          x-faker:
+            number.int:
+              min: 0
+              max: 100
