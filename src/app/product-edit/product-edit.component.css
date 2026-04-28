@@ -1,0 +1,31 @@
+mat-card {
+  max-width: 800px;
+  width: 100%;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row mat-form-field {
+  flex: 1;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}

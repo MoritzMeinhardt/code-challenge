@@ -1,0 +1,133 @@
+openapi: 3.0.3
+info:
+  title: Product Service API
+  description: API for managing products in the code-challenge application.
+  version: 1.0.0
+servers:
+  - url: https://dummyjson.com
+    description: DummyJSON API server
+paths:
+  /products/1:
+    get:
+      summary: Get a single product
+      description: Fetches the details of product with ID 1.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    patch:
+      summary: Update product details
+      description: Updates the product details using a partial product object.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductUpdate'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /products/1/submit:
+    post:
+      summary: Submit the product
+      description: Final submission of the product.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductUpdate'
+      responses:
+        '200':
+          description: Product submitted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Product submitted successfully"
+  /products/check-uniqueness:
+    get:
+      summary: Check product title uniqueness
+      description: Checks if the provided product title is unique.
+      parameters:
+        - name: title
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The title to check for uniqueness.
+      responses:
+        '200':
+          description: Uniqueness check result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isUnique:
+                    type: boolean
+                    x-faker: datatype.boolean
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: "Essence Mascara Lash Princess"
+        description:
+          type: string
+          example: "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects."
+        price:
+          type: number
+          format: float
+          example: 9.99
+        category:
+          type: string
+          example: "beauty"
+        brand:
+          type: string
+          example: "Essence"
+        stock:
+          type: integer
+          example: 5
+        discountPercentage:
+          type: number
+          format: float
+          example: 7.17
+      required:
+        - id
+        - title
+        - price
+    ProductUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        category:
+          type: string
+        brand:
+          type: string
+        stock:
+          type: integer
+        discountPercentage:
+          type: number
+          format: float

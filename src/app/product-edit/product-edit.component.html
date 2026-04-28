@@ -1,0 +1,56 @@
+<mat-card class="shadow-lg bg-white!">
+  <mat-card-header>
+    <mat-card-title>Edit Product</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="productForm" class="product-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" placeholder="Product Title">
+      </mat-form-field>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Brand</mat-label>
+          <input matInput formControlName="brand" placeholder="Brand">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Category</mat-label>
+          <input matInput formControlName="category" placeholder="Category">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" formControlName="price" placeholder="Price">
+          <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Discount %</mat-label>
+          <input matInput type="number" formControlName="discountPercentage" placeholder="Discount">
+          <span matSuffix>%</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Stock Level</mat-label>
+          <input matInput type="number" formControlName="stock" placeholder="Stock">
+          <mat-hint>Can be negative for backorders</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Product Description" rows="4"></textarea>
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-raised-button color="accent" type="button" (click)="onFinalSubmit()">
+          Submit Product
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

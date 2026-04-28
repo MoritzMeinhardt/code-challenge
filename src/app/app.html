@@ -1,0 +1,6 @@
+<div class="container mx-auto p-4">
+  <app-product-edit (submitted)="onProductSubmitted()" />
+  <app-audit-log [entries]="auditLogEntries()" />
+</div>
+
+<router-outlet />
