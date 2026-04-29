@@ -114,7 +114,7 @@ components:
           example: "beauty"
         brand:
           type: string
-          x-faker: company.name
+          x-faker: commerce.productName
           example: "Essence"
         stock:
           type: integer

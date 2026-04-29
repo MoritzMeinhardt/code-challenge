@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { AuditLogComponent, AuditLogEntry } from './audit-log/audit-log.component';
 
@@ -8,7 +7,6 @@ import { AuditLogComponent, AuditLogEntry } from './audit-log/audit-log.componen
   selector: 'app-root',
   imports: [
     CommonModule,
-    RouterOutlet,
     ProductEditComponent,
     AuditLogComponent
   ],
