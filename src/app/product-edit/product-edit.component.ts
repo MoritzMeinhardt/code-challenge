@@ -35,10 +35,11 @@ export class ProductEditComponent implements OnInit {
   });
 
   submitted = output<void>();
+  save = output<void>();
 
   ngOnInit(): void {
     this.#productService.getProduct().subscribe((product: Product) => {
-      this.productForm.patchValue(product, { emitEvent: false });
+      this.productForm.patchValue(product);
     });
   }
 

@@ -18,14 +18,14 @@ import { AuditLogComponent, AuditLogEntry } from './audit-log/audit-log.componen
 export class App {
   protected readonly auditLogEntries = signal<AuditLogEntry[]>([]);
 
-  onProductSubmitted(): void {
+  addToAuditLog(action: 'submit' | 'save'): void {
     // Add audit log entry logic can go here or be triggered from child
     this.auditLogEntries.update(entries => [
       ...entries,
       {
         id: crypto.randomUUID(),
         userName: 'Current User',
-        action: 'submit',
+        action,
         timestamp: new Date().toISOString()
       }
     ]);
